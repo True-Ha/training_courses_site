@@ -66,7 +66,8 @@ async def check_password(message: Message, state: FSMContext):
 
 
 async def start(message: Message):
-    await message.answer('Команды: \n/buy_course\n/reg')
+    await message.answer('Команды: \n/reg\n/buy_course')
+    await bot.send_message(message.chat.id, "Совет:\nДля начала, вам необходимо зарегистрироваться через команду:\n/reg")
 
 
 async def buy_course(message: Message):

@@ -2,7 +2,7 @@
 
 ### Описание проекта
 
-How it works? --> https://youtu.be/VgPHc9xsZ6A
+How it works? --> https://youtu.be/DyaqUyQikZ4
 
 Описание проекта:
 - Создание профиля, оплата через тг бота
