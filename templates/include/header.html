@@ -1,0 +1,56 @@
+ {% load static %}
+
+ <header class="header">
+
+        <div class="logo">
+          <a href="{% url 'home' %}">
+          <img src="{% static '/img/logo.svg' %}" alt="logo" />
+          </a>
+        </div>
+        <nav class="nav">
+          <div class="icons">
+            <a href="#">
+              <img src="{% static 'img/instagram-icon.svg' %}" alt="" />
+            </a>
+            <a href="#">
+              <img src="{% static 'img/youtube-icon.svg' %}" alt="" />
+            </a>
+            <a href="#">
+              <img src="{% static 'img/telegram-icon.svg' %}" alt="" />
+            </a>
+            <a href="#">
+              <img src="{% static 'img/tiktok-icon.svg' %}" alt="" />
+            </a>
+
+            <a href="#">
+              <img src="{% static 'img/vk-icon.svg' %}" alt="" />
+            </a>
+          </div>
+
+
+        {% for train in header_week %}
+          <div class="weeks">
+            <div class="week">
+              <a href="{% url 'train_detail' train.slug %}">
+              <button>{{ train.train_week }}</button>
+              </a>
+            </div>
+          </div>
+          {% endfor %}
+
+
+          {% if user.is_authenticated %}
+          <p class="text-right"><a href="{% url 'logout' %}">logout</a></p>
+          <a href="{% url 'user-info' user.pk %}">
+            <div class="lk">
+              <img src="{% static 'img/icons8-пользователь-64.png'%}" alt="" />
+            </div>
+          </a>
+          {% else %}
+            <p class="text-right"><a href="{% url 'login' %}">Login</a></p>
+          {% endif %}
+
+
+
+        </nav>
+ </header>

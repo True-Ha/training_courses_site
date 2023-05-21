@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="main">
+  <section class="main-page">
+          <div class="title">{{ train.train_week }}</div>
+          <div class="subtitle">кубики!</div>
+          <div class="text-program">
+            Программа для тренировки мощного пресса <br />
+            и кора в домашних условиях!
+          </div>
+          <div class="text-trains">
+            Все тренировки можно делать в любое время <br />
+            и в любом месте. Дома или на улице. <br />
+            Главные условия - отсутствие запретов от <br />
+            врачей и соблюдение техники.
+          </div>
+          <div class="text-box"></div>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/ru/9/94/%D0%93%D0%B8%D0%B3%D0%B0%D1%87%D0%B0%D0%B4.jpg"
+            class="gigachad"
+            alt=""
+          />
+          <img
+            src="https://imgpng.ru/d/dumbbell_PNG16423.png"
+            class="dumbbell"
+            alt=""
+          />
+          <img
+            src="https://cdn.leroymerlin.ru/lmru/image/upload/v1586784741/lmcode/nrOcoeU-qke_LaNwUt3xWg/82582622.png"
+            class="chains"
+            alt=""
+          />
+        </section>
+        <section class="box">
+          <div class="title">
+            <strong>
+              Тренировочный план рассчитан на 3 тренировки в неделю.
+            </strong>
+          </div>
+          <div class="subtitle">
+            Желательно делать пресс в отдельные от силовых тренировок дни.
+            <br />
+            Если это тяжело - то тогда делай пресс в конце основной тренировки.
+            Если не получается сделать все круги - делай столько, <br />
+            сколько сможешь. Всё ок - тебе просто нужно время.
+          </div>
+          <div class="about">Отдых между подходами указан в описании</div>
+        </section>
+
+        <section class="choice">
+          <div class="menus">
+            <a href="#"
+              ><div id="nabor" class="block">Меню для набора массы</div></a
+            >
+            <a href="#"
+              ><div id="sbros" class="block">Меню для похудения</div></a
+            >
+          </div>
+          <div class="bar">
+
+            <ul>
+              {% for days in day_list %}
+                <li class="alldays"><a href="{% url 'train_detail' days.slug %}">{{ days.train_day }}</a></li>
+              {% endfor %}
+            </ul>
+
+          </div>
+        </section>
+        <section class="main-sect">
+          <div class="title"><b>{{train.train_day}}</b></div>
+          <div class="subtitle"><b>табата 30/30</b></div>
+          <div class="main">
+            <iframe
+              src="https://www.youtube.com/embed/OVh0bMNSFss"
+              class="main__video"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <div class="video-subscr">
+              {{ train.description_week|safe }}
+            </div>
+          </div>
+          </br></br>
+          <div class="cards">
+            <div class="card">
+
+
+              <div class="card__subtitle">
+                {{train.train1|safe}}
+              </div>
+              <a
+                href="https://www.youtube.com/watch?v=-gDinVAmtA0&ab_channel=WondersOfClassicalMusic"
+                ><button>youtube</button></a
+              >
+            </div>
+            <div class="card">
+              <div class="card__subtitle">
+                {{train.train2|safe}}
+              </div>
+              <a
+                href="https://www.youtube.com/watch?v=-gDinVAmtA0&ab_channel=WondersOfClassicalMusic"
+                ><button>youtube</button></a
+              >
+            </div>
+            <div class="card">
+
+              <div class="card__subtitle">
+                {{train.train3|safe}}
+              </div>
+              <a
+                href="https://www.youtube.com/watch?v=-gDinVAmtA0&ab_channel=WondersOfClassicalMusic"
+                ><button>youtube</button></a
+              >
+            </div>
+            <div class="card">
+
+              <div class="card__subtitle">
+                {{train.train4|safe}}
+              </div>
+              <a
+                href="https://www.youtube.com/watch?v=-gDinVAmtA0&ab_channel=WondersOfClassicalMusic"
+                ><button>youtube</button></a
+              >
+            </div>
+            <div class="card">
+
+
+              <div class="card__subtitle">
+                {{train.train5|safe}}
+              </div>
+              <a
+                href="https://www.youtube.com/watch?v=-gDinVAmtA0&ab_channel=WondersOfClassicalMusic"
+                ><button>youtube</button></a
+              >
+            </div>
+            <div class="card">
+
+
+              <div class="card__subtitle">
+                {{train.train6|safe}}
+              </div>
+              <a
+                href="https://www.youtube.com/watch?v=-gDinVAmtA0&ab_channel=WondersOfClassicalMusic"
+                ><button>youtube</button></a
+              >
+            </div>
+              <span class="card"
+                >{{train.text_after_train|safe}}</span>
+          </div>
+</section>
+</main>
+
+{% include 'include/footer.html' %}
+{% endblock content %}
+

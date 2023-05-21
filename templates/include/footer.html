@@ -1,0 +1,23 @@
+{% load static %}
+      <footer class="footer">
+        <div class="logotext">
+          <div class="logo">
+            <img src="{% static 'img/logo.svg'%}" alt="" />
+          </div>
+          <div class="text">
+            <a href="">Политика конфиденциальности</a>
+          </div>
+        </div>
+        <div class="menu">
+          <div class="title">Меню</div>
+          <ul>
+            <li><a href="{% url 'home' %}"> Главная</a></li>
+            {% for days in day_list %}
+                <li><a href="{% url 'train_detail' days.slug %}">{{ days.train_day }}</a></li>
+              {% endfor %}
+          </ul>
+        </div>
+        <a href="#">
+          <button>напиши мне</button>
+        </a>
+      </footer>

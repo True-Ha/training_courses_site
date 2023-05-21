@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Домашняя страница{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<div class="grid">
+    <div class="card_train">
+    <h3>Выбор тренировки:</h3>
+  {% for train in train_list %}
+    <p ><a href="{% url 'train_detail' train.slug %}">
+        {{ train.name }}</a></p>
+  {% endfor %}
+      </div>
+    </div>
+{% else %}
+<div class="grid">
+    <h3>Вам необходимо авторизоваться</h3></div>
+{% endif %}
+
+{% endblock content %}

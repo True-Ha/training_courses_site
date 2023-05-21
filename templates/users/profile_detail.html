@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="grid">
+<div class="container d-flex justify-content-center mt-5">
+
+	<div class="card_profile">
+
+		<div class="top-container">
+
+			<img src="https://i.imgur.com/G1pXs7D.jpg" class="img-fluid profile-image" width="70">
+
+			<div class="ml-5">
+				<h5 class="username_text">{{ user.username }}</h5>
+				<p class="mail">{{ user.email }}</p>
+			</div>
+		</div>
+
+
+		<div class="telegram_acc-border mt-4">
+			<span class="telegram_acc">
+            <a href="https://t.me/{{ user.tele_username }}">
+                @{{ user.tele_username }}</a></span>
+		</div>
+
+        <div></div>
+
+		<div class="update_profile pt-2">
+			<span class="update_prf"><a href="{% url 'user-upgrade' %}">Update profile</a></span>
+		</div>
+
+	</div>
+</div>
+</div>
+
+{% endblock content %}
+
+
+
